@@ -24,3 +24,26 @@ class CommentCRUDOps(ModelViewSet):
     authentication_classes = [JSONWebTokenAuthentication,]
     permission_classes = [IsAuthenticated,]
 
+
+
+'''
+ db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_DATABASE: blogdb
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - .dbdata:/var/lib/mysql
+    ports:
+      - 33066:3306
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+'''
